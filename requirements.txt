@@ -1,0 +1,5 @@
+Flask==2.3.3
+requests==2.31.0
+pyautogui==0.9.54
+plyer==2.1
+psutil==5.9.8

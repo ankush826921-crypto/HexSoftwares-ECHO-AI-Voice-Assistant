@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ECHO | Voice Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=4">
+</head>
+<body>
+    <!-- Particles background -->
+    <div id="particles" class="particles"></div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            📋 All Commands
+            <button id="closeSidebarBtn" class="close-sidebar">✖</button>
+        </div>
+        <div class="search-commands">
+            <input type="text" id="cmdSearch" placeholder="Filter commands...">
+        </div>
+        <div class="commands-list" id="commandsList">
+            <!-- populated by JS -->
+        </div>
+    </div>
+
+    <div class="main-content">
+        <button id="openSidebarBtn" class="menu-btn">☰ Commands</button>
+        <div class="container">
+            <div class="header">
+                <div class="logo-container">
+                    <div class="logo-icon">🎧</div>
+                    <div class="logo-text">ECHO</div>
+                    <div class="logo-badge">v2.0</div>
+                </div>
+                <div class="tagline">Just click and speak your command</div>
+            </div>
+
+            <!-- Voice activation area -->
+            <div class="mic-zone">
+                <div class="orb" id="orb">
+                    <!-- No mic button anymore, just visual orb -->
+                    <div class="orb-inner"></div>
+                </div>
+                <div class="voice-waves" id="voiceWaves">
+                    <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+                    <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+                </div>
+                <button id="enableVoiceBtn" class="enable-btn">🎤 Start Voice Listening</button>
+                <div class="status" id="status">Click "Start Voice Listening", allow microphone, and speak.</div>
+            </div>
+
+            <div class="response-panel">
+                <div class="panel-header">
+                    <span>💬 Assistant Response</span>
+                    <div class="sound-bars" id="soundBars">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="response-text" id="responseText">
+                    Hello, I'm Echo. Click the button above to begin listening, then speak your command.
+                </div>
+                <div id="widgetContainer"></div>
+            </div>
+
+            <div class="quick-commands">
+                <div class="quick-title">⚡ Try these quick commands</div>
+                <div class="cmd-grid" id="quickCmdGrid">
+                    <!-- populated by JS -->
+                </div>
+            </div>
+
+            <footer>
+                <p>ECHO – Smart Voice Assistant</p>
+                <button id="settingsBtn" class="settings-btn">⚙️ API Settings</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <h3>Gemini API Setup</h3>
+            <p>To enable advanced intelligence, paste your free Gemini API Key below.</p>
+            <input type="password" id="apiKeyInput" placeholder="Enter GEMINI_API_KEY">
+            <div class="modal-actions">
+                <button id="saveApiBtn" class="save-btn">Save Key</button>
+                <button id="closeModalBtn" class="close-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js?v=5"></script>
+</body>
+</html>
